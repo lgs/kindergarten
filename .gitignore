@@ -1,4 +1,11 @@
-# Compiler files
+# Sveltekit
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+
+# Foundry Solidity
 cache/
 out/
 
@@ -9,3 +16,5 @@ out/
 
 # Dotenv file
 .env
+.env.*
+!.env.example
