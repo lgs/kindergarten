@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.17;
+import "hardhat/console.sol";
 
 contract Lottery {
     /**
@@ -52,6 +53,8 @@ contract Lottery {
     function pickWinner() public onlyOwner {
         uint index = getRandomNumber() % players.length;
         commission = (address(this).balance * 17) / 100;
+        console.log("commission: ", commission);
+
         players[index].transfer(address(this).balance - commission);
 
         // reset the state of the contract
